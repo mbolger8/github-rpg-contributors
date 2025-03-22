@@ -12,9 +12,6 @@
       margin: 0;
       padding: 0;
     }
-    #demo {
-      margin: var(--ddd-spacing-2);
-    }
     github-rpg-contributors {
       margin: var(--ddd-spacing-2);
       border: var(--ddd-border-md);
@@ -23,19 +20,15 @@
     github-rpg-contributors:hover {
       box-shadow: var(--ddd-boxShadow-sm);
     }
-    #example {
-      --github-rpg-contributors-font-size: var(--ddd-font-size-l);
-      background-color: var(--ddd-accent-2);
-      color: var(--ddd-primary-17);
-    }
+
   </style>
-  <title>github-rpg-contributors</title>
+  <title>Github RPG Contributors</title>
 </head>
 
 <body>
   <div id="demo">
-    <h1>github-rpg-contributors</h1>
-    <github-rpg-contributors org="haxtheweb" repo="webcomponents" limit="10"></github-rpg-contributors>
+    <h1>Github RPG Contributors</h1>
+    <github-rpg-contributors org="haxtheweb" repo="webcomponents" limit="25"></github-rpg-contributors>
     <script type="module" src="./github-rpg-contributors.js"></script>
   </body>
   </html>

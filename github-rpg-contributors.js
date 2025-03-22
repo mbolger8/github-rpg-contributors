@@ -58,19 +58,37 @@ export class GithubRpgContributors extends DDDSuper(I18NMixin(LitElement)) {
     css`
       :host {
         display: block;
-        color: var(--ddd-theme-primary);
-        background-color: var(--ddd-theme-accent);
+        color: black;
+        background-color: white;
         font-family: var(--ddd-font-navigation);
       }
       .wrapper {
-        margin: var(--ddd-spacing-2);
-        padding: var(--ddd-spacing-4);
-      }
-      h3 span {
-        font-size: var(--github-rpg-contributors-label-font-size, var(--ddd-font-size-s));
+        margin: 8px;
+        padding: 8px;
       }
       .rpg-wrapper {
         display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 8px;
+        border: 1px solid black;
+        padding: 8px;
+        border-radius: 8px;
+        transition: .3s all ease-in-out;
+      }
+      .rpg-wrapper:hover {
+        opacity: 1;
+        outline: 2px solid black;
+        outline-offset: 4px;
+      }
+      .name {
+        margin-top: 8px;
+        font-size: 16px;
+        text-align: center;
+      }
+      .name:hover {
+        text-decoration: underline;
+        cursor: pointer;
       }
     `];
   }
@@ -96,11 +114,13 @@ export class GithubRpgContributors extends DDDSuper(I18NMixin(LitElement)) {
   // Lit render the HTML
   render() {
     return html`
-<div class="wrapper">
-  ${this.items.filter((item, index) => index < this.limit).map((item) =>
-  html`
-  <rpg-character seed="${item.login}"></rpg-character>
-  `)}
+      <div class="wrapper">
+        ${this.items.filter((item, index) => index < this.limit).map((item) => html`
+          <div class="rpg-wrapper">
+            <rpg-character seed="${item.login}"></rpg-character>
+            <div class="name">${item.login}</div>
+          </div>
+            `)}
 </div>`;
   }
 
