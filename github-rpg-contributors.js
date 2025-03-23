@@ -58,13 +58,13 @@ export class GithubRpgContributors extends DDDSuper(I18NMixin(LitElement)) {
     css`
       :host {
         display: block;
-        color: black;
-        background-color: white;
+        color: --ddd-theme-default-coalyGray;
+        background-color: --ddd-theme-default-white;
         font-family: var(--ddd-font-navigation);
       }
       .wrapper {
-        margin: 8px;
-        padding: 8px;
+        margin: --ddd-spacing-2;
+        padding: --ddd-spacing-2;
       }
       .rpg-wrapper {
         display: inline-flex;
