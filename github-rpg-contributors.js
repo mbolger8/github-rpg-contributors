@@ -58,31 +58,31 @@ export class GithubRpgContributors extends DDDSuper(I18NMixin(LitElement)) {
     css`
       :host {
         display: block;
-        color: --ddd-theme-default-coalyGray;
-        background-color: --ddd-theme-default-white;
+        color: var(--ddd-theme-default-coalyGray);
+        background-color: var(--ddd-theme-default-white);
         font-family: var(--ddd-font-navigation);
       }
       .wrapper {
-        margin: --ddd-spacing-2;
-        padding: --ddd-spacing-2;
+        margin: var(--ddd-spacing-2);
+        padding: var(--ddd-spacing-2);
       }
       .rpg-wrapper {
         display: inline-flex;
         flex-direction: column;
         align-items: center;
-        margin: 8px;
-        border: 1px solid black;
-        padding: 8px;
-        border-radius: 8px;
+        margin: var(--ddd-spacing-2);
+        border: var(--ddd-border-xs, 1px);
+        padding: var(--ddd-spacing-2);
+        border-radius: var(--ddd-radius-sm);
       }
       .rpg-wrapper:hover {
         opacity: 1;
-        outline: 2px solid black;
+        outline: var(--ddd-border-sm, 2px);
         
       }
       .name {
-        margin-top: 8px;
-        font-size: 16px;
+        margin-top: var(--ddd-spacing-2);
+        font-size: var(--ddd-font-size-4xs);
         text-align: center;
       }
       .name:hover {
@@ -90,7 +90,7 @@ export class GithubRpgContributors extends DDDSuper(I18NMixin(LitElement)) {
         cursor: pointer;
       }
       .name:active {
-        color: red;
+        color: var(--ddd-theme-default-original87Pink);
       }
     `];
   }
