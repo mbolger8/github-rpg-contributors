@@ -74,12 +74,11 @@ export class GithubRpgContributors extends DDDSuper(I18NMixin(LitElement)) {
         border: 1px solid black;
         padding: 8px;
         border-radius: 8px;
-        transition: .3s all ease-in-out;
       }
       .rpg-wrapper:hover {
         opacity: 1;
         outline: 2px solid black;
-        outline-offset: 4px;
+        
       }
       .name {
         margin-top: 8px;
@@ -89,6 +88,9 @@ export class GithubRpgContributors extends DDDSuper(I18NMixin(LitElement)) {
       .name:hover {
         text-decoration: underline;
         cursor: pointer;
+      }
+      .name:active {
+        color: red;
       }
     `];
   }
@@ -118,7 +120,9 @@ export class GithubRpgContributors extends DDDSuper(I18NMixin(LitElement)) {
         ${this.items.filter((item, index) => index < this.limit).map((item) => html`
           <div class="rpg-wrapper">
             <rpg-character seed="${item.login}"></rpg-character>
-            <div class="name">${item.login}</div>
+            <a class="name" href="https://github.com/${item.login}" target="_blank">
+              ${item.login}
+            </a>
           </div>
             `)}
 </div>`;
